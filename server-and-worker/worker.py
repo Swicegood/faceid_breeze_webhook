@@ -8,11 +8,26 @@ from rq import Queue
 # This maps days of the week and time ranges (HH:MM) to a mock event ID
 EVENT_SCHEDULE = {
     "Monday": {
-        ("09:00", "10:00"): "event_id_1",
-        ("10:00", "11:00"): "event_id_2",
+        ("03:00", "7:30:00"): "event_id_1",
     },
     "Tuesday": {
-        ("13:00", "14:00"): "event_id_3",
+        ("03:00", "7:30:00"): "event_id_1",
+    },
+    "Wednesday": {
+        ("03:00", "7:30:00"): "event_id_1",
+    },
+    "Thursday": {
+        ("03:00", "7:30:00"): "event_id_1",
+    },
+    "Friday": {
+        ("03:00", "7:30:00"): "event_id_1",
+    },
+    "Saturday": {
+        ("03:00", "7:30:00"): "event_id_1",
+    },
+    "Sunday": {
+        ("03:00", "7:30:00"): "event_id_1",
+        ("16:00", "19:30:00"): "event_id_2",
     },
     # Add other days/times as needed
 }
