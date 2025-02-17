@@ -22,13 +22,15 @@ async def webhook_listener(request: Request):
     The FaceID is fetched from the request headers as an example.
     The payload can also be parsed from the request body if needed.
     """
-    face_id = request.headers.get("FaceID", "unknown")  # Fallback if header is missing
     payload = await request.json()  # Parse JSON body
-    
+    face_id = payload.get("face_id", "unknown")
+
+
+    logging.info(f"Webhook: {payload}")
     # Enqueue a job for background processing.
     # Replace "process_attendance" with the actual function name that should handle your job.
     queue.enqueue("worker.process_attendance", face_id, payload)
     logging.info(f"Webhook received and enqueued for FaceID={face_id}")
 
-    
+
     return {"status": "ok", "message": "Webhook received and enqueued."} 
