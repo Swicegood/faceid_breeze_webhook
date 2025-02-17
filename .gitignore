@@ -1,0 +1,8 @@
+*.csv
+*.CSV
+__pycache__/*
+__pycache__
+pyBreezeChMS/__pycache__
+.env
+token.json
+creentials.json
